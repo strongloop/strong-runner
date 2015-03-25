@@ -1,5 +1,5 @@
 'use strict';
 
 exports.Runner = require('./lib/runner');
-exports.Multi = require('./lib/multi');
+exports.App = require('./lib/app');
 exports.Runnable = require('./lib/runnable');
