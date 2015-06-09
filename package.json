@@ -1,7 +1,7 @@
 {
   "name": "strong-runner",
   "description": "run app with strong-supervisor",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/strongloop/strong-runner.git"
@@ -20,12 +20,12 @@
   "devDependencies": {
     "bl": "^0.9.4",
     "byline": "^4.2.1",
-    "eslint": "^0.16.0",
-    "jscs": "^1.11.3",
+    "eslint": "^0.22.1",
+    "jscs": "^1.13.1",
     "mktmpdir": "^0.1.1",
     "request": "^2.45.0",
     "semver": "^4.1.0",
-    "tap": "^0.7.0"
+    "tap": "^1.2.0"
   },
   "dependencies": {
     "async": "^0.9.0",
@@ -37,6 +37,6 @@
     "osenv": "^0.1.0",
     "strong-control-channel": "^1",
     "strong-fork-cicada": "^1.1.2",
-    "strong-supervisor": "^2.0.0"
+    "strong-supervisor": "^3.0.0"
   }
 }
