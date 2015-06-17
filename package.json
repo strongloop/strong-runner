@@ -35,7 +35,7 @@
     "mkdirp": "^0.5.0",
     "npm-path": "^1.0.1",
     "osenv": "^0.1.0",
-    "strong-control-channel": "^1",
+    "strong-control-channel": "^2",
     "strong-fork-cicada": "^1.1.2",
     "strong-supervisor": "^3.0.0"
   }
