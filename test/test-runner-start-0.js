@@ -23,11 +23,8 @@ tap.test('start 0 workers', function(t) {
 
     if (req.cmd == 'status') {
       t.equal(req.workers.length, 0);
+      r.stop();
     }
     return callback();
-  });
-
-  this.on('end', function() {
-    r.stop();
   });
 });

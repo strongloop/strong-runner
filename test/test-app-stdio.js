@@ -57,7 +57,8 @@ tap.test('stdio for workers', function(t) {
     });
   }
 
-  this.on('end', function() {
+  t.test('done', function(tt) {
     r.stop('soft');
+    tt.end();
   });
 });

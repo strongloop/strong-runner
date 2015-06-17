@@ -19,7 +19,7 @@ tap.test('stdio accumulator', function(t) {
 
   setImmediate(function() {
     stdio.pipe(dst);
-    stdio.pipe(process.stdout);
+    stdio.pipe(process.stderr);
     stdio.from(srcB);
     setImmediate(function() {
       stdio.end();

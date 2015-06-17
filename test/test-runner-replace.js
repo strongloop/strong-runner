@@ -62,7 +62,8 @@ tap.test('start and replace', function(t) {
     });
   });
 
-  this.on('end', function() {
+  t.test('stop', function(tt) {
     r.stop();
+    tt.end();
   });
 });
