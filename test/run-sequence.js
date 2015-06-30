@@ -1,15 +1,11 @@
 'use strict';
 
 var assert = require('assert');
-var c2s = require('../').Runnable.toString;
 var commit = require('./commit');
 var debug = require('debug')('strong-runner:test');
 var fmt = require('util').format;
-var fs = require('fs');
 var helpers = require('./helpers');
-var path = require('path');
 var tap = require('tap');
-var util = require('util');
 var Runner = require('../').Runner;
 
 exports.test = test;
@@ -20,7 +16,9 @@ exports.kill = kill;
 
 function test(/* steps... */) {
   var steps = Array.prototype.slice.call(arguments);
-  var description = steps.map(function(step) { return step.name; }).join(', ');
+  var description = steps.map(function(step) {
+    return step.name;
+  }).join(', ');
 
   tap.test('test sequence: ' + description, function(t) {
     steps.forEach(function(step) {
@@ -88,7 +86,6 @@ function replace(t) {
     var r = t.runner;
     var c = commit.app1();
 
-    var dir0 = r.commit.dir;
     var master0 = r.child ? r.child.pid : undefined;
     var dir1 = c.dir;
 

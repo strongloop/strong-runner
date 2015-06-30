@@ -25,7 +25,7 @@ tap.test('start 0 workers', function(t) {
   r.on('request', function(req, callback) {
     debug('on request: %j', req);
 
-    if (req.cmd == 'status') {
+    if (req.cmd === 'status') {
       t.equal(req.workers.length, 0);
       r.stop();
     }

@@ -1,7 +1,6 @@
 'use strict';
 
 var App = require('../').App;
-var assert = require('assert');
 var byline = require('byline');
 var commit = require('./commit');
 var debug = require('debug')('strong-runner:test');

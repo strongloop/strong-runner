@@ -1,13 +1,7 @@
 'use strict';
 
-var assert = require('assert');
-var c2s = require('../').Runnable.toString;
 var commit = require('./commit');
-var debug = require('debug')('strong-runner:test');
-var fs = require('fs');
-var path = require('path');
 var tap = require('tap');
-var util = require('util');
 var Runner = require('../').Runner;
 
 tap.test('create runner with no options', function(t) {

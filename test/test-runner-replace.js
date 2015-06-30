@@ -36,10 +36,10 @@ tap.test('start and replace', function(t) {
 
       debug('original on request: %j', req);
 
-      if (req.cmd == 'listening') {
+      if (req.cmd === 'listening') {
         tt.equal(req.wid, 1, 'worker 1 listening');
       }
-      if (req.cmd == 'status:wd') {
+      if (req.cmd === 'status:wd') {
         tt.equal(req.cwd, app.dir);
       }
       return callback();
@@ -56,10 +56,10 @@ tap.test('start and replace', function(t) {
     r.on('request', function(req, callback) {
       debug('replaced on request: %j', req);
 
-      if (req.cmd == 'listening') {
+      if (req.cmd === 'listening') {
         tt.equal(req.wid, 2, 'worker 2 listening');
       }
-      if (req.cmd == 'status:wd') {
+      if (req.cmd === 'status:wd') {
         tt.equal(req.cwd, app1.dir);
       }
       return callback();
