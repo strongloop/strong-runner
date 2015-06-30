@@ -5,6 +5,7 @@ var assert = require('assert');
 var byline = require('byline');
 var commit = require('./commit');
 var debug = require('debug')('strong-runner:test');
+var helpers = require('./helpers');
 var tap = require('./tap');
 
 tap.test('stdio for workers', function(t) {
@@ -12,7 +13,8 @@ tap.test('stdio for workers', function(t) {
 
   var r = App({
     start: 'sl-run --cluster=0 --no-profile'
-      + '  --no-timestamp-workers --no-timestamp-supervisor'
+      + '  --no-timestamp-workers --no-timestamp-supervisor',
+    console: helpers.tapFriendlyConsole,
   });
 
   var stdout = byline(r.stdout);

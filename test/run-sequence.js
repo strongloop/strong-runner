@@ -7,6 +7,7 @@ var commit = require('./commit');
 var debug = require('debug')('strong-runner:test');
 var fmt = require('util').format;
 var fs = require('fs');
+var helpers = require('./helpers');
 var path = require('path');
 var tap = require('tap');
 var util = require('util');
@@ -40,8 +41,10 @@ var startCmd = [
 function start(t) {
   t.test('start', function(tt) {
     delimit(tt, 'start');
-
-    var r = t.runner = Runner(commit.app(), {start: startCmd});
+    var r = t.runner = Runner(commit.app(), {
+      start: startCmd,
+      console: helpers.tapFriendlyConsole,
+    });
 
     r.start();
     r.on('request', wait);

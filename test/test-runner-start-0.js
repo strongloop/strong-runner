@@ -4,6 +4,7 @@ var Runner = require('../').Runner;
 var assert = require('assert');
 var commit = require('./commit');
 var debug = require('debug')('strong-runner:test');
+var helpers = require('./helpers');
 var tap = require('./tap');
 
 tap.test('start 0 workers', function(t) {
@@ -12,7 +13,10 @@ tap.test('start 0 workers', function(t) {
 
   assert.notEqual(app.dir, app1.dir);
 
-  var r = Runner(app, {start: 'sl-run --cluster=0 --no-profile'});
+  var r = Runner(app, {
+    start: 'sl-run --cluster=0 --no-profile',
+    console: helpers.tapFriendlyConsole,
+  });
 
   r.start();
 
