@@ -1,7 +1,6 @@
 'use strict';
 
 var assert = require('assert');
-var async = require('async');
 var c2s = require('../').Runnable.toString;
 var commit = require('./commit');
 var debug = require('debug')('strong-runner:test');
