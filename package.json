@@ -13,7 +13,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "lint": "eslint . && jscs .",
+    "lint": "eslint ./ && jscs ./",
     "test": "tap ./test/test-*"
   },
   "bin": {},
