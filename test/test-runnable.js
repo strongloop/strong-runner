@@ -10,7 +10,7 @@ tap.test('runnable creation', function(t) {
 
   t.equal(r.dir, app);
   t.equal(r.env.KEY, env.KEY);
-  delete env.KEY
+  delete env.KEY;
   t.equal(r.env.KEY, 'VALUE', 'commit uses env value, not reference');
   t.assert(r.spawn);
   t.equal(r.id, undefined, 'no id');

@@ -18,5 +18,5 @@ tap.test = function test(name) {
 
   // XXX(sam) explanation is empty, not sure how to fill it in, or if useful,
   // see above
-  return _test.call(tap, name, {skip: true}, function() {});
+  // return _test.call(tap, name, {skip: true}, function() {});
 };

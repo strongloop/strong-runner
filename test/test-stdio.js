@@ -1,7 +1,6 @@
 'use strict';
 
 var Stdio = require('../lib/stdio');
-var assert = require('assert');
 var bl = require('bl');
 var tap = require('tap');
 
