@@ -67,4 +67,6 @@ tap.test('stdio for workers', function(t) {
     r.stop();
     tt.end();
   });
+
+  t.end();
 });
