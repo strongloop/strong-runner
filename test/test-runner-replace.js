@@ -70,4 +70,6 @@ tap.test('start and replace', function(t) {
     r.stop();
     tt.end();
   });
+
+  t.end();
 });
