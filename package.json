@@ -30,6 +30,6 @@
     "lodash": "^3.0.0",
     "strong-control-channel": "^2",
     "strong-fork-cicada": "^1.1.2",
-    "strong-supervisor": "^3.0.0"
+    "strong-supervisor": "^3.1.0"
   }
 }
