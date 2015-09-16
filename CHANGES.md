@@ -1,3 +1,15 @@
+2015-09-16, Version 5.0.0
+=========================
+
+ * package: depend on supervisor chdiring on restart (Sam Roberts)
+
+ * runner: restart using control channel, not SIGHUP (Sam Roberts)
+
+ * runner: always use absolute symlink (Sam Roberts)
+
+ * test: port to tap@1.3.4 (Sam Roberts)
+
+
 2015-07-27, Version 4.0.0
 =========================
 
