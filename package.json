@@ -7,10 +7,7 @@
     "url": "git://github.com/strongloop/strong-runner.git"
   },
   "author": "engineering@strongloop.com",
-  "license": {
-    "name": "Dual Artistic/StrongLoop",
-    "url": "https://github.com/strongloop/strong-runner/blob/master/LICENSE.md"
-  },
+  "license": "Artistic-2.0",
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./ && jscs ./",
