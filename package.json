@@ -10,16 +10,15 @@
   "license": "Artistic-2.0",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ./ && jscs ./",
-    "pretest": "eslint ./ && jscs ./",
+    "pretest": "eslint --ignore-path .gitignore ./",
     "test": "tap --bail ./test/test-*"
   },
   "bin": {},
   "devDependencies": {
     "bl": "^0.9.4",
     "byline": "^4.2.1",
-    "eslint": "^0.24.0",
-    "jscs": "^1.13.1",
+    "eslint": "^2.13.1",
+    "eslint-config-strongloop": "^2.1.0",
     "tap": "^1.3.1"
   },
   "dependencies": {
