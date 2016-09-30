@@ -159,13 +159,14 @@ function kill(t) {
 
     r.child.kill('SIGKILL');
 
-    r.on('exit', function(reason) {
+    r.once('exit', function(reason) {
       tt.equal(reason, 'SIGKILL');
     });
 
     r.on('request', wait);
 
     function wait(req) {
+      if (master1) return;
       if (req.cmd !== 'status') return;
       // Wait until master AND workers have restarted
       if (req.workers.length !== size0) return;
