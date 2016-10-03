@@ -3,6 +3,8 @@
 // This file is licensed under the Artistic License 2.0.
 // License text available at https://opensource.org/licenses/Artistic-2.0
 
+'use strict';
+
 var assert = require('assert');
 var env = process.env;
 var fs = require('fs');
@@ -19,8 +21,7 @@ console.log('ENV.PWD:', env.PWD);
 assert.notEqual(env.PWD, process.cwd());
 assert.equal(fs.realpathSync(env.PWD), process.cwd());
 
-http.createServer(onRequest)
-    .listen(process.env.PORT || 0, function() {
+http.createServer(onRequest).listen(process.env.PORT || 0, function() {
   console.log('pid %d listening on %s', process.pid, this.address().port);
 
   // Used to verify process existence/health

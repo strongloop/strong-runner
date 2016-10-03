@@ -5,7 +5,10 @@
 
 'use strict';
 
+var log = require('debug')('strong-runner:test:log');
+var err = require('debug')('strong-runner:test:err');
+
 exports.tapFriendlyConsole = {
-  log: console.error,
-  error: console.error,
+  log: log,
+  error: err,
 };
