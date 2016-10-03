@@ -16,7 +16,7 @@
   "bin": {},
   "devDependencies": {
     "bl": "^1.1.2",
-    "byline": "^4.2.1",
+    "byline": "^5.0.0",
     "eslint": "^2.13.1",
     "eslint-config-strongloop": "^2.1.0",
     "tap": "^7.1.2"
