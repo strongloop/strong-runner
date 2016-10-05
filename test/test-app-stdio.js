@@ -42,12 +42,11 @@ tap.test('stdio for workers', function(t) {
 
   t.test('stop app', function(tt) {
     debug('wait for stop');
-    tt.plan(2);
-    r.stop('hard', function(err) {
+    tt.plan(1);
+    r.stop('soft', function(err) {
       debug('stopped: err? %s', err);
       tt.ifError(err, err || 'stop ok');
     });
-    watchFor(tt, /supervisor stopped/);
   });
 
   t.test('start app', function(tt) {
@@ -76,8 +75,11 @@ tap.test('stdio for workers', function(t) {
   }
 
   t.test('done', function(tt) {
-    r.stop('soft');
-    tt.end();
+    tt.plan(1);
+    r.stop('hard', function(err) {
+      debug('stopped: err? %s', err);
+      tt.ifError(err, err || 'stop ok');
+    });
   });
 
   t.end();
