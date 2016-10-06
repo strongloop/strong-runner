@@ -85,6 +85,10 @@ function stop(t) {
     var r = t.runner;
 
     r.stop(function(status) {
+      // Node 0.10 synthesizes a numeric status when children die by signal.
+      // 143 is 0x80 + SIGTERM, where SIGTERM = 15
+      if (Number(status) === 143)
+        status = 'SIGTERM';
       tt.equal(status, 'SIGTERM');
       tt.end();
     });
