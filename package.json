@@ -1,7 +1,7 @@
 {
   "name": "strong-runner",
   "description": "run app with strong-supervisor",
-  "version": "5.0.3",
+  "version": "6.0.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/strongloop/strong-runner.git"
@@ -26,6 +26,6 @@
     "lodash": "^4.14.1",
     "strong-control-channel": "^2",
     "strong-fork-cicada": "^1.1.2",
-    "strong-supervisor": "^3.2.0"
+    "strong-supervisor": "^5.x"
   }
 }

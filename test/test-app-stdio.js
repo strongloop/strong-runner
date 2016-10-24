@@ -22,6 +22,11 @@ tap.test('stdio for workers', function(t) {
   });
 
   var stdout = byline(r.stdout);
+  var stderr = byline(r.stderr);
+
+  stderr.on('data', function(line) {
+    t.comment('stderr <%s>', line);
+  });
 
   // HACK: this prevents the first line of TAP output being a plan, which is
   // interpretted by tap4j/Jenkins as a plan for the the parent test, not the
@@ -37,12 +42,11 @@ tap.test('stdio for workers', function(t) {
 
   t.test('stop app', function(tt) {
     debug('wait for stop');
-    tt.plan(2);
-    r.stop('hard', function(err) {
+    tt.plan(1);
+    r.stop('soft', function(err) {
       debug('stopped: err? %s', err);
       tt.ifError(err, err || 'stop ok');
     });
-    watchFor(tt, /supervisor stopped/);
   });
 
   t.test('start app', function(tt) {
@@ -57,20 +61,25 @@ tap.test('stdio for workers', function(t) {
 
   function watchFor(t, rx) {
     var saw;
-    stdout.on('data', function(line) {
+    stdout.on('data', watch);
+    function watch(line) {
       if (saw) return;
-      debug('is %s in <%s>', rx, line);
+      t.comment('is %s in <%s>', rx, line);
       if (!saw && rx.test(line)) {
         saw = true;
+        stdout.removeListener('data', watch);
         debug('saw rx %s', rx);
         t.assert(true, 'saw rx ' + rx);
       }
-    });
+    }
   }
 
   t.test('done', function(tt) {
-    r.stop('soft');
-    tt.end();
+    tt.plan(1);
+    r.stop('hard', function(err) {
+      debug('stopped: err? %s', err);
+      tt.ifError(err, err || 'stop ok');
+    });
   });
 
   t.end();
