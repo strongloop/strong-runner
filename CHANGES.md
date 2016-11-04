@@ -1,3 +1,35 @@
+2016-11-04, Version 6.0.0
+=========================
+
+ * test: node 0.10 uses numeric signal status (Sam Roberts)
+
+ * runner: don't restart a stopped app (Sam Roberts)
+
+ * test: piped stdio may be truncated during shutdown (Sam Roberts)
+
+ * test: log stdio as comment, and cleanup listeners (Sam Roberts)
+
+ * package: update strong-supervisor to 5.x (Sam Roberts)
+
+ * test: skip replace tests on win32 (Sam Roberts)
+
+ * runner: do not use DEBUG to skip IO piping (Sam Roberts)
+
+ * test: update byline to 5.x (Sam Roberts)
+
+ * test: update bl to 1.x (Sam Roberts)
+
+ * package: update tap to 7.x (Sam Roberts)
+
+ * package: update eslint to 2.x (Sam Roberts)
+
+ * test: direct console output to debug() (Sam Roberts)
+
+ * package: update lodash to 4.x (Sam Roberts)
+
+ * Update URLs in CONTRIBUTING.md (#20) (Ryan Graham)
+
+
 2016-05-06, Version 5.0.3
 =========================
 
