@@ -1,3 +1,11 @@
+2017-02-23, Version 7.0.0
+=========================
+
+ * package: drop support for node < 4.x (Sam Roberts)
+
+ * package: update strong-supervisor to 6.x (Sam Roberts)
+
+
 2016-11-04, Version 6.0.0
 =========================
 
