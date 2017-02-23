@@ -26,6 +26,6 @@
     "lodash": "^4.14.1",
     "strong-control-channel": "^2",
     "strong-fork-cicada": "^1.1.2",
-    "strong-supervisor": "^5.x"
+    "strong-supervisor": "^6.x"
   }
 }
