@@ -14,7 +14,9 @@
   "main": "index.js",
   "scripts": {
     "pretest": "eslint --ignore-path .gitignore ./",
-    "test": "tap --bail ./test/test-*"
+    "test": "tap --bail ./test/test-*",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "bin": {},
   "devDependencies": {
@@ -29,6 +31,8 @@
     "lodash": "^4.14.1",
     "strong-control-channel": "^2",
     "strong-fork-cicada": "^1.1.2",
-    "strong-supervisor": "^6.x"
-  }
+    "strong-supervisor": "^6.x",
+    "snyk": "^1.88.0"
+  },
+  "snyk": true
 }
